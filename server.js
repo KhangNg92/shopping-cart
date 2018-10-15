@@ -24,7 +24,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true });
 app.use(express.static(publicPath));
 app.use(urlencodedParser);
 app.use(expressSession({
-  secret: "privates.sessionSecret",
+  secret: "shopping",
   resave: false,
   saveUninitialized: false
 }));
