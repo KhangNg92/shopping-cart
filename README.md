@@ -74,4 +74,4 @@ $ npm run start
 ```
 8. App now running on localhost:5000
 
-9.
+9. Progress
