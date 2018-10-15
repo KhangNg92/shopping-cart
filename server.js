@@ -17,7 +17,7 @@ const publicPath = path.join(__dirname, 'client', 'public');
 const port = process.env.PORT || 5000;
 
 const app = express();
-mongoose.connect("mongodb://khang:minhkhang1@ds133113.mlab.com:33113/shopify");
+mongoose.connect("mongodb://shopping:minhkhang1@ds127293.mlab.com:27293/shopping");
 
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
 
@@ -39,9 +39,9 @@ app.use('/api/catalog', catalogRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/order', orderRoutes);
-app.use(express.static('client/build'));
+
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 app.listen(port, () => console.log('SERVER NOW RUNNING...'));
